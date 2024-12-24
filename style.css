@@ -1,0 +1,458 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    line-height: 1.6;
+	
+}
+
+
+header {
+    background: linear-gradient(to right, #1c1c1c, #333);
+    padding: 10px 20px;
+}
+.header1 {
+    background-color: #333;
+    color: #fff;
+    padding: 1.5rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header1 h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header1 p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active {
+    background: #ff4b2b;
+    color: #ffffff;
+}
+
+
+main {
+    padding: 20px;
+    text-align: center;
+	color:white;
+}
+.contactmain{
+	
+    padding: 20px;
+    text-align: center;
+	color: #1c1c1c;
+	color: #555;
+	
+}
+.contacth1{
+	color: #1c1c1c;
+}
+	
+
+main h1 {
+    font-size: 2.5rem;
+    /*color: #1c1c1c;*/
+	color:orange;
+    margin-bottom: 10px;
+}
+main h1:hover{
+	text-decoration:underline;
+}
+
+main h2 {
+    font-size: 1.8rem;
+    /*color: #555;*/
+	color:orange;
+    margin-bottom: 20px;
+}
+/* Container for each image with overlay button */
+.image-link-container {
+    position: relative;
+    width: 100%;
+    max-width: 300px; /* Adjust as needed */
+    margin: 20px auto; /* Center alignment and spacing */
+}
+
+.link-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+/* Style for overlay button on the image */
+.image-button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect on the button */
+.image-link:hover .image-button {
+    background-color: rgba(255, 0, 0, 0.8); /* Change to a vibrant color on hover */
+}
+
+/* Timeline Styles */
+.timeline {
+    margin: 20px 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* Individual Timeline Item */
+.timeline-item {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 2px solid #008000; /* Change to your preferred color */
+    position: relative;
+}
+
+.timeline-item h3 {
+    margin: 0;
+    color: white; /* Title color */
+    font-size: 18px; /* Optional for consistent size */
+}
+
+.timeline-item p {
+    color: white; /* Description color */
+    font-size: 14px; /* Optional for size consistency */
+}
+
+.timeline-item img {
+    width: 100%; /* Responsive image */
+    height: auto;
+    margin-top: 10px;
+    border-radius: 8px; /* Optional rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow for depth */
+}
+
+/* Hover effect on timeline items */
+.timeline-item:hover {
+    background-color: rgba(0, 128, 0, 0.1); /* Subtle hover effect */
+    border-left-color: #ff4b2b; /* Change border color on hover */
+}
+
+@media (max-width: 768px) {
+    /* Adjustments for smaller screens */
+    .timeline-item {
+        margin-left: 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .image-button {
+        font-size: 14px; /* Smaller button text on mobile */
+    }
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 2 items per row */
+    gap: 15px; /* Reduced gap between items */
+    padding: 10px; /* Added padding for better spacing */
+}
+
+/* Gallery Image Styles */
+.gallery-image {
+    width: 100%; /* Ensures the image adapts to its container width */
+    max-width: 400px; /* Reduced maximum width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Subtle depth effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease, border-color 0.3s ease; /* Smooth transition for effects */
+    display: block; /* Ensures proper alignment */
+    margin: 20px auto; /* Centers the image */
+    overflow: hidden; /* Ensures the rounded corners cut the image content */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Adds a soft border */
+}
+
+/* Hover Effect */
+.gallery-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    border-color: #ff4b2b; /* Changes the border color on hover */
+    filter: brightness(1.1); /* Makes the image slightly brighter */
+	border-radius:50%;
+}
+
+/* Content Image Styles */
+.content-image {
+    width: 100%; /* Ensures the image adapts to its container width */
+    max-width: 400px; /* Reduced maximum width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 10px; /* Smooth rounded corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Subtle depth effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+    display: block; /* Ensures proper alignment */
+    margin: 20px auto; /* Centers the image */
+    overflow: hidden; /* Ensures the rounded corners cut the image content */
+    border: 2px solid rgba(255, 255, 255, 0.8); /* Adds a soft border */
+}
+
+/* Hover Effect */
+.content-image:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+    border-color: #ff4b2b; /* Changes the border color on hover */
+    filter: brightness(1.1); /* Makes the image slightly brighter */
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 768px) {
+    .sliding-sections {
+        grid-template-columns: 1fr; /* Stack images in one column on smaller screens */
+    }
+    .gallery-image, .content-image {
+        max-width: 90%; /* Allow images to scale down */
+    }
+}
+
+
+/* Form Container */
+.form-container {
+    padding: 40px;
+    background-color: #f9f9f9; /* Light background */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    max-width: 800px;
+    margin: 0 auto; /* Center form */
+}
+
+/* Label Styles */
+.form-container label {
+    font-size: 18px;
+    color: #333; /* Dark text for labels */
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block; /* Block display for proper label alignment */
+}
+
+/* Input and Textarea Styles */
+.form-container input[type="text"], 
+.form-container input[type="email"], 
+.form-container textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ddd; /* Light border */
+    background-color: #f4f4f4; /* Light background for inputs */
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px; /* Space between fields */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+/* Focus State */
+.form-container input[type="text"]:focus, 
+.form-container input[type="email"]:focus, 
+.form-container textarea:focus {
+    border-color: #ff4b2b; /* Border color change on focus */
+    background-color: #fff; /* Background changes to white on focus */
+    outline: none;
+}
+
+/* Textarea Specific */
+.form-container textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+/* Submit Button */
+.form-container input[type="submit"] {
+    padding: 15px;
+    background-color: #ff4b2b; 
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+
+.form-container input[type="submit"]:hover {
+    background-color: #e43f1b; 
+    transform: translateY(-2px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: #1c1c1c;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+footer .footer-content div {
+    flex: 1;
+    min-width: 250px;
+}
+
+footer h3 {
+    font-size: 1.2rem;
+    color: #ff4b2b;
+    margin-bottom: 10px;
+}
+
+footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+footer ul li a:hover {
+    color: #ff4b2b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .sliding-sections {
+        grid-template-columns: 1fr;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+    }
+}
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: orange; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Rounded corners for the handle */
+    border: 2px solid #f4f4f4; /* Creates spacing around the thumb */
+}
+.company:hover{
+	color:orange;
+}
+#myBtn{
+	color:white;
+	bottom:20px;
+	right:30px;
+	background-color:red;
+	border:none;
+	border-radius:10px;
+	padding: 15px;
+	cursor:pointer;
+	font-size:18px;
+	
+	outline:none;
+	
+	
+	
+	
+}
+#myBtn:hover{
+	background-color:#555;
+}
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.video-background video {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+p{
+	color:orange;
+}
+.summary{
+	color:black;
+	border-style:double;
+}
+.details{
+	color:black;
+
+}
+.summary:hover{
+	text-decoration:underline;
+	color:magenta;
+	
+}
+.details:hover{
+	color:brown;
+	
+	
+}
+.detailsh2:hover{
+	text-decoration:underline;
+	
+}
+	
+
