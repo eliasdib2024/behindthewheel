@@ -430,7 +430,7 @@ footer ul li a:hover {
     height: 100%;
 }
 p{
-	color:orange;
+	color:#FF8C00;
 }
 .summary{
 	color:black;
@@ -454,5 +454,31 @@ p{
 	text-decoration:underline;
 	
 }
+.orange{
+	color:#FF8C00;
+}
+li{
+	color:#FF8C00;
+}
+.table1{
+	display:flex;
+	justify-content:center;
+	
+}
+table{
+	margin-bottom:20px;
+	font-family:Nexa Aura;
+}
+ tr:hover {
+  transform: scale(1.02); 
+  box-shadow: 0px 4px 10px ;
+  background-color: #f9f9f9;
+  cursor:pointer; 
+  color:orange;  
+}
+
+
+
+
 	
 
