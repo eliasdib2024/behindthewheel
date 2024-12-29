@@ -1,7 +1,7 @@
 
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/style.css">
     <title>Contact Us</title>
@@ -16,7 +16,7 @@
 
     <header>
 	
-        <nav aria-label="Main navigation">
+        <nav>
             <ul>
                 <li><a href="../home.html">Home</a></li>
                 <li><a href="car-companies.html">Car Companies</a></li>
@@ -46,8 +46,16 @@
 <div class="form-container">
 <form  action="../home.html" method="post">
 
-<label for="name"><u>Name:</u></label>
-<input type="text" id="name" name="name" placeholder="Enter your name" required>
+<input  type="date" id="date" required>
+
+<label for="name"><u>First Name:</u></label>
+<input type="text" id="name" name="name" placeholder="Enter your first name" required>
+<select class="gender" name="gender" required>
+<option selected="Gender">Gender</option>
+<option value="Male">Male</option>
+
+<option value="female">Female</option>
+</select>
 <label for="name"><u>Last Name:</u></label>
 <input type="text" id="name" name="name" placeholder="Enter your last name" required>
 
@@ -58,7 +66,9 @@
 <input type="text" id="phone" name="phone" placeholder="Enter your phone number">
 
 <label for="message"><u>Message</u>:</label><br>
-<textarea id="message" placeholder="Write something ..."></textarea>
+<textarea id="message" placeholder="Feedback..."></textarea>
+
+
 
  
 
