@@ -22,28 +22,7 @@
     <header>
 	<script src="script.js">
 	 </script>
-	   <script>
-        const loanButton = document.getElementById("loanButton");
-        const loanResult = document.getElementById("loanResult");
 
-        loanButton.addEventListener("click", function () {
-            const loanAmount = parseFloat(document.getElementById("loanAmount").value);
-            const interestRate = parseFloat(document.getElementById("interestRate").value) / 100 / 12; // Monthly interest rate
-            const loanTerm = parseFloat(document.getElementById("loanTerm").value) * 12; // Total number of payments (months)
-
-            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
-                alert("Please enter valid loan details!");
-                return;
-            }
-
-            // M = P * (r(1 + r)^n) / ((1 + r)^n - 1)
-            const numerator = loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm);
-            const denominator = Math.pow(1 + interestRate, loanTerm) - 1;
-            const monthlyPayment = numerator / denominator;
-
-            loanResult.textContent = Your Monthly Payment: $${monthlyPayment.toFixed(2)};
-        });
-    </script>
 	 
         <nav>
             <ul>
@@ -73,6 +52,28 @@
 
         <div id="loanResult"></div>
     </div>
+	 <script>
+        const loanButton = document.getElementById("loanButton");
+        const loanResult = document.getElementById("loanResult");
+
+        loanButton.addEventListener("click", function () {
+            const loanAmount = parseFloat(document.getElementById("loanAmount").value);
+            const interestRate = parseFloat(document.getElementById("interestRate").value) / 100 / 12; // Monthly interest rate
+            const loanTerm = parseFloat(document.getElementById("loanTerm").value) * 12; // Total number of payments (months)
+
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+                alert("Please enter valid loan details!");
+                return;
+            }
+
+            // M = P * (r(1 + r)^n) / ((1 + r)^n - 1)
+            const numerator = loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm);
+            const denominator = Math.pow(1 + interestRate, loanTerm) - 1;
+            const monthlyPayment = numerator / denominator;
+
+            loanResult.textContent = monthlyPayment.toFixed(2);
+        });
+    </script>
         <h1>Latest Car Models</h1>
         <section class="latest-models">
             <article>

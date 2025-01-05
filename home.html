@@ -22,30 +22,7 @@
      <header>
 	 <script src="script.js">
 	 </script>
-	 <script>
-	  const carTips = [
-            "Check your tire pressure regularly for better fuel efficiency.",
-            "Change your oil every 5,000 to 7,500 miles.",
-            "Keep your car clean to prevent rust from forming.",
-            "Replace your windshield wipers every 6-12 months.",
-            "Make sure to rotate your tires every 6,000-8,000 miles.",
-            "Always use the correct fuel type for your car.",
-            "Keep an emergency kit in your car for unexpected situations.",
-            "Check your battery terminals for corrosion periodically.",
-            "Don’t ignore warning lights on your dashboard.",
-            "Inspect your brakes if you hear any unusual noises."
-        ];
-
-        document.getElementById("generateTip").addEventListener("click", function() {
-            let randomIndex = Math.floor(Math.random() * carTips.length);
-
-            let tipElement = document.getElementById("carTip");
-            tipElement.setAttribute("style", "color: red; font-size: 20px;");
-            tipElement.textContent = carTips[randomIndex];
-        });
-	 </script>
-	 
-	 
+	
 
 
 
@@ -67,8 +44,33 @@
 
 
 <main>
+ 
  <button id="generateTip">Car Tip of the Day</button>
     <p id="carTip"></p>
+ <script>
+	  const carTips = [
+            "Check your tire pressure regularly for better fuel efficiency.",
+            "Change your oil every 5,000 to 7,500 miles.",
+            "Keep your car clean to prevent rust from forming.",
+            "Replace your windshield wipers every 6-12 months.",
+            "Make sure to rotate your tires every 6,000-8,000 miles.",
+            "Always use the correct fuel type for your car.",
+            "Keep an emergency kit in your car for unexpected situations.",
+            "Check your battery terminals for corrosion periodically.",
+            "Don’t ignore warning lights on your dashboard.",
+            "Inspect your brakes if you hear any unusual noises."
+        ];
+
+        document.getElementById("generateTip").addEventListener("click", function() {
+            let randomIndex = Math.floor(Math.random() * carTips.length);
+
+            let tipElement = document.getElementById("carTip");
+            tipElement.setAttribute("style", "color: red; font-size: 20px;");
+            tipElement.textContent = carTips[randomIndex];
+        });
+		
+</script>
+
     
  
 
@@ -110,6 +112,7 @@
     </section>
 </main>
 <button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
+
 
  <footer>
         <p>&copy; 2024-Behind The Wheel | ALL RIGHTS RESERVED<br>

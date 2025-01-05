@@ -21,6 +21,34 @@
     <header>
 	<script src="script.js">
 	 </script>
+	 
+	
+        <nav>
+            <ul>
+                <li><a href="../home.html">Home</a></li>
+                <li><a href="car-companies.html" class="active">Car Companies</a></li>
+                <li><a href="latest-models.html">Latest Models</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+				<li><a href="details.html"> More Details</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+				
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+	 
+	   <div>
+        <label for="distance">Distance (in km):</label>
+        <input type="number" id="distance" placeholder="Enter distance" required>
+
+        <label for="fuelPrice">Fuel Price (per liter):</label>
+        <input type="number" id="fuelPrice" placeholder="Enter fuel price" required>
+
+        <button id="calcButton">Calculate Fuel Cost</button>
+
+        <div id="fuelCost"></div>
+    </div>
 	    <script>
         const calcButton = document.getElementById("calcButton");
         const fuelCostDisplay = document.getElementById("fuelCost");
@@ -39,36 +67,9 @@
             const fuelNeeded = distance / averageMileage;
             const totalCost = fuelNeeded * fuelPrice;
 
-            fuelCostDisplay.textContent = Estimated Fuel Cost: $${totalCost.toFixed(2)};
+            fuelCostDisplay.textContent =totalCost.toFixed(2);
         });
     </script>
-	
-        <nav>
-            <ul>
-                <li><a href="../home.html">Home</a></li>
-                <li><a href="car-companies.html" class="active">Car Companies</a></li>
-                <li><a href="latest-models.html">Latest Models</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-				<li><a href="details.html"> More Details</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-				
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-	 
-	 <div>
-        <label for="distance">Distance (in km):</label>
-        <input type="number" id="distance" placeholder="Enter distance" required>
-
-        <label for="fuelPrice">Fuel Price (per liter):</label>
-        <input type="number" id="fuelPrice" placeholder="Enter fuel price" required>
-
-        <button id="calcButton">Calculate Fuel Cost</button>
-
-        <div id="fuelCost"></div>
-    </div>
 
 
 	
