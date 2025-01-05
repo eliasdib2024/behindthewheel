@@ -21,7 +21,28 @@
 	</div>
      <header>
 	 <script src="script.js">
-	 
+	 </script>
+	 <script>
+	  const carTips = [
+            "Check your tire pressure regularly for better fuel efficiency.",
+            "Change your oil every 5,000 to 7,500 miles.",
+            "Keep your car clean to prevent rust from forming.",
+            "Replace your windshield wipers every 6-12 months.",
+            "Make sure to rotate your tires every 6,000-8,000 miles.",
+            "Always use the correct fuel type for your car.",
+            "Keep an emergency kit in your car for unexpected situations.",
+            "Check your battery terminals for corrosion periodically.",
+            "Don’t ignore warning lights on your dashboard.",
+            "Inspect your brakes if you hear any unusual noises."
+        ];
+
+        document.getElementById("generateTip").addEventListener("click", function() {
+            let randomIndex = Math.floor(Math.random() * carTips.length);
+
+            let tipElement = document.getElementById("carTip");
+            tipElement.setAttribute("style", "color: red; font-size: 20px;");
+            tipElement.textContent = carTips[randomIndex];
+        });
 	 </script>
 	 
 	 
@@ -36,8 +57,9 @@
 <li><a href="pages/car-companies.html">Car Companies</a></li>
 <li><a href="pages/latest-models.html">Latest Models</a></li>
 <li><a href="pages/gallery.html">Gallery</a></li>
-<li><a href="pages/contact.html">Contact Us</a></li>
 <li><a href="pages/details.html" >More Details</a></li>
+<li><a href="pages/contact.html">Contact Us</a></li>
+
 </ul>
 </nav>
 </header>
@@ -45,6 +67,10 @@
 
 
 <main>
+ <button id="generateTip">Car Tip of the Day</button>
+    <p id="carTip"></p>
+    
+ 
 
     <h1>Welcome to the World of Cars</h1>
     <h2>Explore Our Highlights</h2>
@@ -68,16 +94,17 @@
                 <span class="image-button">Explore Gallery</span>
             </a>
         </article>
+        
         <article class="image-link-container">
+            <a href="pages/details.html" class="image-link">
+                <img src="images/details.jpeg" alt="More Details" class="link-image">
+                <span class="image-button">More Details</span>
+            </a>
+        </article>
+		<article class="image-link-container">
             <a href="pages/contact.html" class="image-link">
                 <img src="images/contact.jpg" alt="Contact Us" class="link-image">
                 <span class="image-button">Contact Us</span>
-            </a>
-        </article>
-        <article class="image-link-container">
-            <a href="pages/details.html" class="image-link">
-                <img src="images/contact.jpg" alt="More Details" class="link-image">
-                <span class="image-button">More Details</span>
             </a>
         </article>
     </section>

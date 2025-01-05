@@ -15,6 +15,49 @@
 	</div>
 
     <header>
+	<script>
+	 function ContactInfo() {
+              let data = {
+                date: document.getElementById('date').value,
+                first_name: document.getElementById('fname').value,
+                last_name: document.getElementById('lname').value,
+				age:document.getElementById('age').value,
+                gender: document.getElementById('gender').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                message: document.getElementById('message').value
+				
+              };
+          
+              
+              const jsonString = JSON.stringify(data, null, 2);
+          
+             
+              const blob = new Blob([jsonString], { type: 'application/json' });
+              const link = document.createElement('a');
+              link.href = URL.createObjectURL(blob);
+              link.download = 'contact-info.json';
+              link.click();
+          
+              
+              const output = document.createElement('pre');
+              output.textContent = jsonString;
+              document.body.appendChild(output);
+              alert('Thank you for your response!');
+			  if(age>=18){
+                  console.log("You are allowed to contact us");
+                  }
+                  else{
+                  console.log("sorry this is not for you");
+             }
+
+            }
+	
+
+
+ 
+   </script>
+   
 	
         <nav>
             <ul>
@@ -22,8 +65,9 @@
                 <li><a href="car-companies.html">Car Companies</a></li>
                 <li><a href="latest-models.html">Latest Models</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html" class="active">Contact Us</a></li>
 				<li><a href="details.html">More Details</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+				
 				
 				
 			    
@@ -48,16 +92,31 @@
 
 <input  type="date" id="date" required>
 
-<label for="name"><u>First Name:</u></label>
-<input type="text" id="name" name="name" placeholder="Enter your first name" required>
-<select class="gender" name="gender" required>
-<option selected="Gender">Gender</option>
-<option value="Male">Male</option>
+<label for="fname"><u>First Name:</u></label>
+<input type="text" id="fname" name="fname" placeholder="Enter your first name" required>
 
-<option value="female">Female</option>
+<select id="gender" name="gender" required>
+      <option selected="Gender">Gender</option>
+      <option value="Male">Male</option>
+      <option value="female">Female</option>
 </select>
-<label for="name"><u>Last Name:</u></label>
-<input type="text" id="name" name="name" placeholder="Enter your last name" required>
+
+
+<div class="bodyage">
+  <label for="age"><u>Select your age:<u></label>
+ 
+  <script>
+    
+     document.writeln('<select id="age">');
+    for (let age = 1; age <= 100; age++) {
+      document.writeln("<option>"+age+"</option>");
+    }
+	document.writeln("</select>");
+  </script>
+
+</div>
+<label for="lname"><u>Last Name:</u></label>
+<input type="text" id="lname" name="lname" placeholder="Enter your last name" required>
 
 <label for="email"><u>Email:</u></label>
 <input type="email" id="email" name="email" placeholder="Enter your email" required>
@@ -72,14 +131,14 @@
 
  
 
-<input type="submit" value="Send Message" href="home.html" onclick="alert('Thank your for your response')">
+<input type="submit" value="Send Message" href="home.html" onclick="ContactInfo()">
 </form>
 </div>
 </section>
     </main>
 
     <footer>
-        <p>&copy; 2024-Behind The Wheel | ALL RIGHT RESERVED<br>
+        <p>&copy; 2024-Behind The Wheel | ALL RIGHTS RESERVED<br>
 		Maurice Yaacoub<br>
 		Elias Dib</p>
     </footer>

@@ -20,8 +20,30 @@
     </video>
 </div>
     <header>
-	 <script src="script.js">
+	<script src="script.js">
 	 </script>
+	   <script>
+        const loanButton = document.getElementById("loanButton");
+        const loanResult = document.getElementById("loanResult");
+
+        loanButton.addEventListener("click", function () {
+            const loanAmount = parseFloat(document.getElementById("loanAmount").value);
+            const interestRate = parseFloat(document.getElementById("interestRate").value) / 100 / 12; // Monthly interest rate
+            const loanTerm = parseFloat(document.getElementById("loanTerm").value) * 12; // Total number of payments (months)
+
+            if (isNaN(loanAmount) || isNaN(interestRate) || isNaN(loanTerm) || loanAmount <= 0 || interestRate <= 0 || loanTerm <= 0) {
+                alert("Please enter valid loan details!");
+                return;
+            }
+
+            // M = P * (r(1 + r)^n) / ((1 + r)^n - 1)
+            const numerator = loanAmount * interestRate * Math.pow(1 + interestRate, loanTerm);
+            const denominator = Math.pow(1 + interestRate, loanTerm) - 1;
+            const monthlyPayment = numerator / denominator;
+
+            loanResult.textContent = Your Monthly Payment: $${monthlyPayment.toFixed(2)};
+        });
+    </script>
 	 
         <nav>
             <ul>
@@ -29,13 +51,28 @@
                 <li><a href="car-companies.html">Car Companies</a></li>
                 <li><a href="latest-models.html" class="active">Latest Models</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
 				<li><a href="details.html" >More Details</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+				
             </ul>
         </nav>
     </header>
 
     <main>
+	  <div>
+        <label for="loanAmount">Loan Amount ($):</label>
+        <input type="number" id="loanAmount" placeholder="Enter loan amount" required>
+
+        <label for="interestRate">Annual Interest Rate (%):</label>
+        <input type="number" id="interestRate" placeholder="Enter interest rate" required>
+
+        <label for="loanTerm">Loan Term (years):</label>
+        <input type="number" id="loanTerm" placeholder="Enter loan term" required>
+
+        <button id="loanButton">Calculate Monthly Payment</button>
+
+        <div id="loanResult"></div>
+    </div>
         <h1>Latest Car Models</h1>
         <section class="latest-models">
             <article>
@@ -47,7 +84,7 @@
                 <p>The Tesla Model S Plaid is an electric luxury sedan with incredible speed, cutting-edge technology, and a range of over 390 miles.</p>
 				<ul type="none">
 				<li>Performance:</li>
-				<ul type="square">
+				<ul type="none">
 				<li><strong>Acceleration:</strong> 0 to 60 mph in 1.99 seconds</li>
                 <li><strong> Top Speed:</strong> 200 mph</li>
                 <li><strong> Power Output:</strong> 1,020 horsepower</li>
@@ -55,11 +92,11 @@
 				</ul>
 				
 				<li><strong>Pricing:</strong></li>
-				<ul>
+				<ul  type="none">
 				<li><strong>Base Price:</strong>94,990$(as of December 14,2024)</li>
 				</ul>
 				<li><strong>Additional Features</strong>:</li>
-				<ul>
+				<ul  type="none">
 				<li><strong>Interior:</strong> 17-inch touchscreen with left-right tilt, yoke steering, and a 22-speaker audio system</li>
                 <li> <strong>Safety:</strong> Equipped with Tesla's latest active safety features, including Automatic Emergency Braking</li>
                 <li><strong>Design:</strong> Aerodynamic profile with a drag coefficient of 0.208, contributing to its efficiency and performance</li>
@@ -76,7 +113,7 @@
                 <p>The BMW iX is a premium electric SUV that combines a futuristic design with advanced features and an impressive electric range.</p>
 				<ul type="none">
 				<li><strong>Performance:</strong></li>
-				<ul>
+				<ul  type="none">>
                 <li><strong>Power Output:</strong> Up to 610 horsepower</li>
                 <li><strong>Battery Capacity:</strong> 111.5 kWh</li>
                 <li><strong>Range:</strong> Approximately 285 miles (EPA estimated)</li>
@@ -85,12 +122,12 @@
 				</ul>
 				
                <li><strong>Charging Capabilities:</strong></li>
-			   <ul>
+			   <ul  type="none">
               <li><strong> AC Charging:</strong> Up to 11 kW</li>
                <li><strong>DC Fast Charging:</strong> Up to 200 kW, allowing for a significant recharge in a short time</li>
                </ul>
 			   <li><strong>Design and Features:</strong></li>
-			   <ul>
+			   <ul type="none">
                <li><strong>Exterior:</strong> The iX features a distinctive design with a prominent kidney grille, aerodynamic enhancements, and sleek LED headlights.</li>
                <li><strong>Interior:</strong> A spacious cabin equipped with advanced technology, including a curved display, premium materials, and optional features like the Radiant Heating package for enhanced comfort.</li>
 			   </ul>
@@ -107,9 +144,9 @@
 				<summary class="orange">Price and Specs</summary>
                 <p>The Mercedes-Benz EQS is a luxury electric sedan that offers supreme comfort, state-of-the-art technology, and exceptional performance.</p>
 				<div>
-				<ul>
+				<ul type="none">
 				<li><strong>EQS 580 4MATIC Sedan:</strong></li>
-                <ul>
+                <ul type="none">
 				<li><strong>Starting Price:</strong> $125,950</li>
                 <li><strong>Power:</strong> 516 horsepower</li>
                 <li><strong>Torque:</strong> 631 lb-ft</li>
@@ -118,13 +155,13 @@
                 <li><strong>EPA-Estimated Range:</strong> Up to 371 miles</li>
 				</ul>
                <li><strong> AMG EQS Sedan:</strong></li>
-			   <ul>
+			  <ul type="none">
                 <li><strong>Starting Price:</strong> $147,550</li>
                 <li><strong>Performance:</strong> Enhanced AMG-specific electric motors for increased power and acceleration</li>
                 </ul>
 				</ul>
 				<strong class="orange">Key Features:</strong>
-				<ul>
+				<ul type="none">
                  <li><strong>Interior:</strong> The EQS boasts a luxurious interior equipped with the MBUX Hyperscreen, a seamless glass dashboard incorporating multiple displays for the driver and passengers.</li>
                <li><strong>Safety and Driver Assistance:</strong> Standard features include advanced driver assistance systems, such as adaptive cruise control, lane-keeping assist, and automated emergency braking.</li>
                 <li><strong>Charging Capabilities:</strong> The EQS supports DC fast charging, allowing for rapid replenishment of the battery. Charging times can vary based on the power source and conditions.</li>
@@ -140,17 +177,17 @@
 				<details>
 				<summary class="orange">Price and Specs</summary>
                 <p>The Toyota GR Corolla is a sporty hatchback with a turbocharged engine, all-wheel drive, and a dynamic driving experience.</p>
-				<ul>
+				<ul type="none">
                <li><strong>Starting Price:</strong> $50,995</li>
               <li><strong> Performance Enhancements:</strong></li>
-               <ul>
+               <ul type="none">
 			   <li>Increased torque output</li>
                <li> Weight reduction measures, including removal of rear seats</li>
              <li>Track-tuned suspension and exclusive performance components</li>
              </ul>
 			 </ul>
 			 <strong class="orange">Performance Specifications:</strong>
-            <ul>
+            <ul type="none">
 			<li><strong>Engine: 1.6L turbocharged inline-3
               <li><strong>Horsepower:</strong> 300 hp</li>
               <li><strong>Torque:</strong> 273 lb-ft (Core and Premium); up to 295 lb-ft (Morizo Edition)</li>
@@ -159,7 +196,7 @@
               <li><strong>Fuel Economy:</strong> Approximately 21 MPG city / 28 MPG highway</li>
              </ul>
 			  <strong class="orange">Interior and Features:</strong>
-             <ul>
+             <ul type="none">
 			 <li><strong>Seating Capacity:</strong> 5 passengers (4 in Morizo Edition due to rear seat removal)</li>
              <li><strong>Cargo Space:</strong> 17.8 cubic feet</li>
             <li><strong>Infotainment:</strong> 8-inch touchscreen with Apple CarPlay® and Android Auto™ integration</li>
@@ -175,7 +212,7 @@
 <button onclick="topFunction()" id="myBtn" title="Go to top">&#8679;</button>
 
     <footer>
-        <p>&copy; 2024-Behind The Wheel | ALL RIGHT RESERVED<br>
+        <p>&copy; 2024-Behind The Wheel | ALL RIGHTS RESERVED<br>
 		Maurice Yaacoub<br>
 		Elias Dib</p>
     </footer>
