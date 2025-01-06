@@ -9,11 +9,11 @@
             font-size: 18px;
             font-weight: bold;
             margin-top: 20px;
-            color: #ff4b2b;
+            color: #ffac07;
         }
 
  #generateTip {
-            background-color: #007bff;
+            background-color: #ffa200;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -23,11 +23,11 @@
         }
 
  #generateTip:hover {
-            background-color: #0056b3;
+            background-color: #be7a04;
         }
 
 body {
-    font-family: 'Lil Grotesk', sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #333;
     background: linear-gradient(to bottom, #ffffff, #e6e6e6);
     line-height: 1.6;
@@ -80,11 +80,14 @@ header nav ul li a {
 
 header nav ul li a:hover,
 header nav ul li a.active {
-    background: #ff4b2b;
+    background: #ffa200;
     color: #ffffff;
     border-radius: 5px;
 }
 
+header nav ul li a.active:hover{
+background: #be7024;
+}
 
 main {
     padding: 20px;
@@ -106,18 +109,17 @@ main {
 
 main h1 {
     font-size: 2.5rem;
-    /*color: #1c1c1c;*/
-	color:rgb(248, 167, 61);
+	color:#ffa200;
     margin-bottom: 10px;
 }
 main h1:hover{
-	text-decoration:underline;
+	text-decoration:wavy;
 }
 
 main h2 {
     font-size: 1.8rem;
     /*color: #555;*/
-	color:rgb(248, 167, 61);
+	color:#ffa200;
     margin-bottom: 20px;
 }
 
@@ -167,7 +169,7 @@ main h2 {
 .timeline-item {
     margin: 15px 0;
     padding: 10px;
-    border-left: 2px solid #008000; 
+    border-left: 2px solid #ffa200; 
     position: relative;
 }
 
@@ -215,6 +217,8 @@ main h2 {
     grid-template-columns: repeat(3, 1fr); 
     gap: 15px; 
     padding: 10px; 
+    display: flex;
+    flex-wrap: wrap;
 }
 
 
@@ -427,13 +431,19 @@ footer ul li a:hover {
 
 
 ::-webkit-scrollbar-thumb {
-    background: orange; 
+    background: #ffa200; 
     border-radius: 10px;
     border: 2px solid #f4f4f4;
 }
+
 .company:hover{
-	color:orange;
+	color:#ffa200;
 }
+
+.company:visited{
+color:#be7024 ;
+}
+
 #myBtn{
 	color:white;
 	bottom:20px;
@@ -535,7 +545,7 @@ label {
                 padding: 15px 30px;
                 font-size: 1.2em;
                 color: white;
-                background-color: #28a745; /* Green */
+                background-color: #ffa200; 
                 border: none;
                 border-radius: 5px;
                 cursor: pointer;
@@ -543,14 +553,14 @@ label {
             }
     
  #calcButton:hover {
-                background-color: #218838;
+            background-color: #e68900;
                 transform: scale(1.1);
             }
     
 #fuelCost {
                 margin-top: 20px;
                 font-size: 1.5em;
-                color: #555;
+                color: #ffffff;
        }
 label {
             margin: 10px 0;
@@ -570,7 +580,7 @@ input {
             padding: 15px 30px;
             font-size: 1.2em;
             color: white;
-            background-color: #ff9800; /* Orange */
+            background-color: #ffa200; /* Orange */
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -585,7 +595,9 @@ input {
 #loanResult {
             margin-top: 20px;
             font-size: 1.5em;
-            color: #555;
+            color: #ffffff;
         }
 
-
+table caption{
+    font-style: italic;
+}
